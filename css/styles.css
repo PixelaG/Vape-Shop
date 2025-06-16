@@ -67,31 +67,101 @@ nav ul li a:hover, nav ul li a.active {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* განახლებული hero სექცია */
 .hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ვერტიკალურად ცენტრში */
+    align-items: center;     /* ჰორიზონტალურად ცენტრში */
+    height: 100vh;           /* მთლიანი ცხრილოვანი სიმაღლე */
+    padding: 0 2rem;
+    background: url('https://vapemandu.com/wp-content/uploads/2021/09/small-banner-2.jpg') center center no-repeat;
     background-size: cover;
-    background-position: center;
     color: white;
-    margin-bottom: 2rem;
-    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);  /* მუქი ფენის დასამატებლად */
+    z-index: 0;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 600px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
+
+.hero .btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    background-color: #4361ee;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(67,97,238,0.6);
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #3f37c9;
+}
+
+
+/* loading */
+
+#loading-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    font-weight: bold;
+    user-select: none;
+}
+
+#loading-overlay .spinner {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 60px;
+    height: 60px;
+    border: 6px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+#loading-overlay p {
+    font-size: 3rem;
+    margin: 0;
+    text-align: center;
+}
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
 
 /* განახლებული ღილაკები */
 .btn {
