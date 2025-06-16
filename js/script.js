@@ -33,6 +33,12 @@ const cartItemsContainer = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
 const checkoutBtn = document.getElementById('checkout-btn');
 
+document.getElementById("checkout-btn").addEventListener("click", function() {
+    // გახსნის ლინკს ახალ ფანჯარაში / ტაბში
+    window.open("https://www.instagram.com/giorgis_pixela/", "_blank");
+  });
+
+
 // გვერდის დატვირთვისას
 document.addEventListener('DOMContentLoaded', function() {
     updateCartCount();
