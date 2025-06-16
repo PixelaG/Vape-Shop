@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ჩემი მაღაზია - მთავარი</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>ჩემი მაღაზია</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">მთავარი</a></li>
+                <li><a href="products.html">პროდუქტები</a></li>
+                <li><a href="#" id="cart-link">კალათა (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>კეთილი იყოს თქვენი მობრძანება!</h2>
+            <p>ჩვენს მაღაზიაში იხილავთ ხარისხიან პროდუქტებს დაბალ ფასად</p>
+            <a href="products.html" class="btn">იხილეთ პროდუქტები</a>
+        </section>
+
+        <section class="featured-products">
+            <h2>რეკომენდირებული პროდუქტები</h2>
+            <div class="products-container">
+                <!-- პროდუქტები დაემატება JavaScript-ით -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ჩემი მაღაზია. ყველა უფლება დაცულია.</p>
+    </footer>
+
+    <!-- კალათის მოდალური ფანჯარა -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>თქვენი კალათა</h2>
+            <div id="cart-items">
+                <!-- კალათის ელემენტები დაემატება JavaScript-ით -->
+            </div>
+            <p id="cart-total">ჯამი: ₾0.00</p>
+            <button id="checkout-btn" class="btn">გადახდა</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
