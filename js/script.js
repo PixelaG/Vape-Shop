@@ -36,6 +36,24 @@ const checkoutBtn = document.getElementById('checkout-btn');
 document.getElementById("checkout-btn").addEventListener("click", function() {
     // გახსნის ლინკს ახალ ფანჯარაში / ტაბში
     window.open("https://www.instagram.com/giorgis_pixela/", "_blank");
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('view-products-btn');
+    const overlay = document.getElementById('loading-overlay');
+  
+    if (btn && overlay) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+  
+        overlay.style.display = 'flex';  // აჩვენეთ ფონი
+  
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 1500);
+      });
+    }
   });
 
 
